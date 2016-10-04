@@ -817,8 +817,16 @@ footer .line-footer {
 .list-products .products .item {
   line-height: 16px;
 }
-
-.list-products .products .row:nth-of-type(2n) {
+ul {
+  padding: 0;
+}
+.mini_cart_item .remove{
+    display: none;
+}
+.product_list_widget li>a {
+  display: inline-block;
+}
+.list-products .products .block-producsss:nth-of-type(2n) {
     background: #f2f2f2;
     margin: 15px -15px 40px -15px;
     padding-top: 50px;

@@ -50,7 +50,7 @@ do_action('woocommerce_before_main_content');
                 </p>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="">
             <div class="block-items products">
                 <?php $i = 1; ?>
                 <?php if (have_posts()) : ?>
@@ -61,9 +61,9 @@ do_action('woocommerce_before_main_content');
                     <?php woocommerce_product_loop_start(); ?>
 
                     <?php woocommerce_product_subcategories(); ?>
-
-                    <div class="row">
-                        <div class="col-md-10 cpl-md-offset-1 col-lg-10 col-lg-offset-1">
+                
+                    <div class="block-producsss">
+                        <div class="container">
                             <div class="row">
                                 <?php while (have_posts()) : the_post(); ?>
                                     <div class="col-sm-4 col-xs-6 col-md-3">
@@ -76,8 +76,8 @@ do_action('woocommerce_before_main_content');
                                     <?php
                                     if ($i % 4 == 0) {
                                         echo '</div></div></div>';
-                                        echo '<div class="row">
-                                            <div class="col-md-10 cpl-md-offset-1 col-lg-8 col-lg-offset-2">
+                                        echo '<div class="block-producsss">
+                                            <div class="container">
                                             <div class="row">';
                                     }
                                     $i++;

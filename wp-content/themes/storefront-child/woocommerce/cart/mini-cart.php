@@ -29,10 +29,10 @@ if (!defined('ABSPATH')) {
     <?php if (!WC()->cart->is_empty()) : ?>
 
         <?php
+        $i=1;
         foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
             $_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
             $product_id = apply_filters('woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key);
-
             if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key)) {
                 $product_name = apply_filters('woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key);
                 $thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
@@ -41,6 +41,7 @@ if (!defined('ABSPATH')) {
                 ?>
                 <li class="<?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
                     <?php
+                    echo '<span class="order-stt">'.$i.'.  '.'</span>';
                     echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
                                     '<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>', esc_url(WC()->cart->get_remove_url($cart_item_key)), __('Remove this item', 'woocommerce'), esc_attr($product_id), esc_attr($_product->get_sku())
                             ), $cart_item_key);
@@ -56,7 +57,7 @@ if (!defined('ABSPATH')) {
 
                     <?php echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); ?>
                 </li>
-                <?php
+                <?php $i++;
             }
         }
         ?>

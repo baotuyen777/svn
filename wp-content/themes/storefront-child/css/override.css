@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 30, 2016, 9:32:07 PM
+    Author     : michael
+*/
+
+ .button, button, input[type=button], input[type=reset], input[type=submit] {
+    font-weight: normal;
+}
+.dropdown_cart{
+    display: inline;
+}
+.btn_cart{
+    
+    background: transparent;
+    color: #8fd823;
+}
+
+/*//my theme*/
+#navbar li{
+   display:  inline-block;
+   text-transform: uppercase;
+}
+.full-width{
+    height: auto;
+}

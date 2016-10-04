@@ -9,16 +9,16 @@
 include_once 'backend/backend.php';
 //social
 include_once 'backend/social/facebook_connect.php';
-include_once 'libs/google_connect/auto_load.php';
-include_once 'backend/social/google_connect.php';
-
-include_once 'register.php';
-include_once 'q_profile.php';
-include_once 'login.php';
-include_once 'logout.php';
-include_once 'change_password.php';
-include_once 'reset_password.php';
-include_once 'input_news_password.php';
+//include_once 'libs/google_connect/auto_load.php';
+//include_once 'backend/social/google_connect.php';
+//
+//include_once 'register.php';
+//include_once 'q_profile.php';
+//include_once 'login.php';
+//include_once 'logout.php';
+//include_once 'change_password.php';
+//include_once 'reset_password.php';
+//include_once 'input_news_password.php';
 
 define('QMUS_PLUGIN_URL', plugins_url('', __FILE__));
 //notice const
@@ -105,7 +105,7 @@ add_action('wp_enqueue_scripts', 'qsoft_enqueue_scripts_and_styles');
 //backend asset
 function qsoft_load_custom_wp_admin_style() {
     wp_enqueue_style('css_backend', plugin_dir_url(__FILE__) . '/css/backend.css');
-    wp_enqueue_script('js_backend', plugin_dir_url(__FILE__) . '/js/backend.js', ['jquery'], null, true);
+//    wp_enqueue_script('js_backend', plugin_dir_url(__FILE__) . '/js/backend.js', ['jquery'], null, true);
 }
 
 add_action('admin_enqueue_scripts', 'qsoft_load_custom_wp_admin_style', 100);
@@ -134,36 +134,36 @@ function qsoft_redirect($link, $alert) {
  * @param type $arr_all_field
  * @param type $data_specialized
  */
-function get_field_mail($user_id, $field_mail, $data_specialized) {
-    $field_mail_value = get_option($field_mail);
-    $pattern = '/(\[)([0-9A-Za-z_]+)(\])/i';
-    preg_match_all($pattern, $field_mail_value, $item);
-
-    $arrayReplace = [];
-    foreach ($item[2] as $field_name) {
-        switch ($field_name):
-            case 'email':
-                $arrayReplace[] = isset($data_specialized['email']) ? $data_specialized['email'] : '[email]';
-                break;
-            case 'website':
-                $arrayReplace[] = str_replace(array('https://','http://'), '', get_site_url());
-                break;
-            case 'user_login':
-                $arrayReplace[] = isset($data_specialized['user_login']) ? $data_specialized['user_login'] : '[user_login]';
-                break;
-            case 'link_active':
-                $arrayReplace[] = isset($data_specialized['link_active']) ? str_replace(array('https://','http://'), '', $data_specialized['link_active']) : '[link_active]';
-                break;
-            case 'link_forgot_password':
-                $arrayReplace[] = isset($data_specialized['link_forgot_password']) ? str_replace(array('https://','http://'), '', $data_specialized['link_forgot_password']) : '[link_forgot_password]';
-                break;
-            default:
-                $arrayReplace[] = get_user_meta($user_id, $field_name, true);
-        endswitch;
-    }
-    $fields = str_replace($item[0], $arrayReplace, $field_mail_value);
-    return ($fields);
-}
+//function get_field_mail($user_id, $field_mail, $data_specialized) {
+//    $field_mail_value = get_option($field_mail);
+//    $pattern = '/(\[)([0-9A-Za-z_]+)(\])/i';
+//    preg_match_all($pattern, $field_mail_value, $item);
+//
+//    $arrayReplace = [];
+//    foreach ($item[2] as $field_name) {
+//        switch ($field_name):
+//            case 'email':
+//                $arrayReplace[] = isset($data_specialized['email']) ? $data_specialized['email'] : '[email]';
+//                break;
+//            case 'website':
+//                $arrayReplace[] = str_replace(array('https://','http://'), '', get_site_url());
+//                break;
+//            case 'user_login':
+//                $arrayReplace[] = isset($data_specialized['user_login']) ? $data_specialized['user_login'] : '[user_login]';
+//                break;
+//            case 'link_active':
+//                $arrayReplace[] = isset($data_specialized['link_active']) ? str_replace(array('https://','http://'), '', $data_specialized['link_active']) : '[link_active]';
+//                break;
+//            case 'link_forgot_password':
+//                $arrayReplace[] = isset($data_specialized['link_forgot_password']) ? str_replace(array('https://','http://'), '', $data_specialized['link_forgot_password']) : '[link_forgot_password]';
+//                break;
+//            default:
+//                $arrayReplace[] = get_user_meta($user_id, $field_name, true);
+//        endswitch;
+//    }
+//    $fields = str_replace($item[0], $arrayReplace, $field_mail_value);
+//    return ($fields);
+//}
 
 //function qsoft_send_email($send_to, $subject = 'User management system', $mail_content = 'hi', $name = 'Customer') {
 //    require 'libs/PHPMailer-master/PHPMailerAutoload.php';

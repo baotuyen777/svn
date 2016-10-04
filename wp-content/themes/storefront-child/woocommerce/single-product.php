@@ -31,17 +31,24 @@ get_header('shop');
  */
 do_action('woocommerce_before_main_content');
 ?>
+<?php
+    $_pf = new WC_Product_Factory();
+?>
 <div class="main">
-    <div class="homepage">
+    <div class="detail">
         <div class="container">
+            <div class="breadcrumbs">
+                <div class="breadcrumbs size-18 ">
+                    <a href>Home</a> - <span class="current">Hoa qua sấy</span>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-7 col-md-8">
-                    <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
-                        <h3 class="inline-block"><?php woocommerce_page_title(); ?> </h3>
-                    <?php endif; ?>
                     <?php while (have_posts()) : the_post(); ?>
-
-                        <?php wc_get_template_part('content', 'single-product'); ?>
+                        <?php
+                             $_product = $_pf->get_product(get_the_id());
+                             var_dump(the_post_thumbnail(get_the_id()));
+                        ?>
 
                     <?php endwhile; // end of the loop. ?>
 
@@ -61,7 +68,7 @@ do_action('woocommerce_before_main_content');
                                 'posts_per_page' => 4,
                                 'post_type' => 'product',
 //                        'fields' => 'ids',
-                                'meta_query' => $meta_query,
+                                // 'meta_query' => $meta_query,
                                 'tax_query' => array(
                                     'relation' => 'OR',
                                     array(

@@ -28,3 +28,6 @@ and open the template in the editor.
 .full-width{
     height: auto;
 }
+.wc_payment_methods {
+    display: none;
+}

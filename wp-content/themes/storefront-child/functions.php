@@ -2,14 +2,13 @@
 
 include_once 'theme_config.php';
 include_once 'include/widget.php';
-include_once 'include/Facebook/autoload.php';
-
+//include_once 'include/Facebook/autoload.php';
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
 
 function custom_override_checkout_fields($fields) {
 //    unset($fields['billing']['billing_first_name']);
 //    unset($fields['billing']['billing_last_name']);
-//    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_company']);
 //    unset($fields['billing']['billing_address_1']);
     unset($fields['billing']['billing_address_2']);
     unset($fields['billing']['billing_city']);
@@ -22,3 +21,12 @@ function custom_override_checkout_fields($fields) {
   
     return $fields;
 }
+function woocommerce_mini_cart( $args = array() ) {
+    $defaults = array(
+      'list_class' => ''
+    );
+
+    $args = wp_parse_args( $args, $defaults );
+    wc_get_template( 'cart/mini-cart.php', $args );
+  }
+ 

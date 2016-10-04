@@ -1,3 +1,6 @@
+<?php
+     global $post_id;
+?>
 <div class=" product item">
     <?php echo get_the_post_thumbnail($post_id, 'thumbnail', array('class' => 'full-width')) ?>
     <div class="header-item display-block">

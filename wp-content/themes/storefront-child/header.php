@@ -15,7 +15,6 @@
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Kiyoshi-lamnv_qsoft VietNam">
         <?php wp_head(); ?>
         <!--<link rel="icon" type="image/png" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">-->
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/css/font-awesome.min.css">
@@ -26,7 +25,10 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/css/override.css">
 
     </head>
-
+    <?php
+        global $woocomerce;
+        ob_start();
+    ?>
     <body <?php body_class(); ?>>
     <div id="fb-root"></div>
         <script>(function(d, s, id) {
@@ -87,9 +89,10 @@
                                                 <span class="caret"></span>
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li>
-                                                    <?php the_widget('WC_Widget_Cart', 'title='); ?>
-                                                </li>
+                                                <?php woocommerce_mini_cart( ); ?>
+                                                <!-- <li>
+                                                    <?php //the_widget('WC_Widget_Cart', 'title='); ?>
+                                                </li> -->
                                             </ul>
                                         </div>
                                     </div>

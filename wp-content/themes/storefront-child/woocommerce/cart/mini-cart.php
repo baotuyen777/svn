@@ -46,10 +46,10 @@ if (!defined('ABSPATH')) {
                             ), $cart_item_key);
                     ?>
                     <?php if (!$_product->is_visible()) : ?>
-                        <?php echo str_replace(array('http:', 'https:'), '', $thumbnail) . $product_name . '&nbsp;'; ?>
+                        <?php echo  $product_name;?>
                     <?php else : ?>
                         <a href="<?php echo esc_url($product_permalink); ?>">
-                            <?php echo str_replace(array('http:', 'https:'), '', $thumbnail) . $product_name . '&nbsp;'; ?>
+                            <?php echo  $product_name; ?>
                         </a>
                     <?php endif; ?>
                     <?php echo WC()->cart->get_item_data($cart_item); ?>

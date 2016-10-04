@@ -63,11 +63,13 @@ do_action('woocommerce_before_main_content');
                     <?php woocommerce_product_subcategories(); ?>
 
                     <div class="row">
-                        <div class="col-sm-10 col-sm-offset-1">
+                        <div class="col-md-10 cpl-md-offset-1 col-lg-10 col-lg-offset-1">
                             <div class="row">
                                 <?php while (have_posts()) : the_post(); ?>
                                     <div class="col-sm-4 col-xs-6 col-md-3">
                                         <?php
+                                        global $post_id;
+                                        $post_id = get_the_id();
                                         include(locate_template('template-parts/product-list.php'));
                                         ?>
                                     </div>
@@ -75,7 +77,7 @@ do_action('woocommerce_before_main_content');
                                     if ($i % 4 == 0) {
                                         echo '</div></div></div>';
                                         echo '<div class="row">
-                                            <div class="col-sm-10 col-sm-offset-1">
+                                            <div class="col-md-10 cpl-md-offset-1 col-lg-8 col-lg-offset-2">
                                             <div class="row">';
                                     }
                                     $i++;

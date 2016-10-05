@@ -278,7 +278,7 @@ h4 {
 .border-radius-4 {
   border-radius: 4px;
 }
-
+.padding-0 {padding: 0;}
 .border-radius-6 {
   border-radius: 6px;
 }
@@ -828,8 +828,19 @@ ul {
 }
 .list-products .products .block-producsss:nth-of-type(2n) {
     background: #f2f2f2;
-    margin: 15px -15px 40px -15px;
+    margin: 15px 0px 40px 0px;
     padding-top: 50px;
+}
+.detail-product img {
+  width: 100%;
+  height: auto;
+}
+hr.bold {
+  height: 2px;
+  background: #ccc;
+}
+.margin-top-60 {
+  margin-top: 60px;
 }
 .list-products .products .product .price del {
       margin-top: 5px;
@@ -978,10 +989,14 @@ input {
     font-size: 24px;
   }
   h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
   h4 {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .side-bar .feature-product img {
+    height: auto;
+    width: auto;
   }
   .navbar-header .navbar-toggle {
     border: 1px solid #ccc;

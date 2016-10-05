@@ -35,25 +35,48 @@ do_action('woocommerce_before_main_content');
     $_pf = new WC_Product_Factory();
 ?>
 <div class="main">
-    <div class="detail">
+    <div class="detail-product">
         <div class="container">
-            <div class="breadcrumbs">
-                <div class="breadcrumbs size-18 ">
-                    <a href>Home</a> - <span class="current">Hoa qua sấy</span>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-sm-7 col-md-8">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs size-18 ">
+                        <a href>Home</a> - <span class="current">Hoa qua sấy</span>
+                    </div>
+                </div>
                     <?php while (have_posts()) : the_post(); ?>
                         <?php
                              $_product = $_pf->get_product(get_the_id());
-                             var_dump(the_post_thumbnail(get_the_id()));
+                             $product_id = get_the_id();
                         ?>
+                        <div class="row margin-top-20">
+                            <div class="col-sm-6">
+                                <h1 class=" text-orange font-blow text-uppercase"><?php the_title(); ?></h1>
+                                <?php echo get_the_post_thumbnail(get_the_id(),array('class' => 'full-width')); ?>
+                            </div>
+                            <div class="col-sm-6 margin-top-60">
 
+                                <p><?php echo $_product->post->post_excerpt; ?></p>
+                                <div class="pull-right ">
+                                    <form class="cart margin-top-20" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
+                                        <input type="hidden" name="add-to-cart" value="<?php echo get_the_ID() ?>">
+                                        <button type="submit" class="button btn-tw-add-cart product_type_simple add_to_cart_button ajax_add_to_cart pull-left"><strong>Mua ngay</strong></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="bold margin-top-45">
+                        <div class="margin-top-20">
+                            <?php the_content(); ?>
+                        </div>
                     <?php endwhile; // end of the loop. ?>
 
-                    <section>
-                        <h3 class="inline-block">SẢN PHẨM TƯƠNG TỰ </h3><a href="#">xem thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    <section class="margin-top-45 homepage">
+                    <?php 
+                        $terms = get_the_terms($post->ID, 'product_cat');
+                    ?>
+                        <h3 class="inline-block ">SẢN PHẨM TƯƠNG TỰ </h3><a href="<?php echo get_category_link($terms[0]->term_id) ?>">xem thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                     <div class="block-items products">
                         <div class="row">
                             <?php

@@ -143,7 +143,7 @@
                                 <div class="col-xs-12">
                                     <p class="size-16 text-center text-white">Hotline đặt hàng: <?php echo get_field('phone_header', PAGE_HOME) ?></p>
                                 </div>
-                                <div class="col-xs-12">
+                                <div class="col-xs-12 padding-0">
                                     <div class="menu-top text-center">
                                         <?php
                                         $client_id = get_option('qsoft_facebook_app_id');

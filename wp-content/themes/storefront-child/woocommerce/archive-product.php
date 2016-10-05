@@ -34,11 +34,11 @@ do_action('woocommerce_before_main_content');
 <div class="main">
     <div class="list-products">
         <div class="container">
-            <div class="breadcrumbs">
-                <div class="breadcrumbs size-18 ">
-                    <a href>Home</a> - <span class="current">Hoa qua sấy</span>
-                </div>
-            </div>
+            <span class="breadcrumbs">
+                <div class="breadcrumbs  size-20 " xmlns:v="http://rdf.data-vocabulary.org/#">
+                    <a href="<?php echo get_home_url(); ?>"">Home</a> / <span class="current"><?php the_title(); ?></span>
+                </div><!-- .breadcrumbs -->
+            </span>
             <div class="content-page">
                 <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
                     <h2 class="title seze-20 text-orange font-blow text-uppercase"><?php woocommerce_page_title(); ?> </h2>
@@ -50,7 +50,7 @@ do_action('woocommerce_before_main_content');
                 </p>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="">
             <div class="block-items products">
                 <?php $i = 1; ?>
                 <?php if (have_posts()) : ?>
@@ -61,9 +61,9 @@ do_action('woocommerce_before_main_content');
                     <?php woocommerce_product_loop_start(); ?>
 
                     <?php woocommerce_product_subcategories(); ?>
-
-                    <div class="row">
-                        <div class="col-md-10 cpl-md-offset-1 col-lg-10 col-lg-offset-1">
+                
+                    <div class="block-producsss">
+                        <div class="container">
                             <div class="row">
                                 <?php while (have_posts()) : the_post(); ?>
                                     <div class="col-sm-4 col-xs-6 col-md-3">
@@ -76,8 +76,8 @@ do_action('woocommerce_before_main_content');
                                     <?php
                                     if ($i % 4 == 0) {
                                         echo '</div></div></div>';
-                                        echo '<div class="row">
-                                            <div class="col-md-10 cpl-md-offset-1 col-lg-8 col-lg-offset-2">
+                                        echo '<div class="block-producsss">
+                                            <div class="container">
                                             <div class="row">';
                                     }
                                     $i++;

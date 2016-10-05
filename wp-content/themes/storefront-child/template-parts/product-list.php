@@ -15,7 +15,7 @@
             <form class="cart margin-top-20" method="post" enctype="multipart/form-data">
                 <input type="hidden" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
                 <input type="hidden" name="add-to-cart" value="<?php echo get_the_ID() ?>">
-                <button type="submit" class="button btn-tw-add-cart product_type_simple add_to_cart_button ajax_add_to_cart pull-left">Mua ngay</button>
+                <button type="submit" class="button btn-tw-add-cart product_type_simple add_to_cart_button ajax_add_to_cart pull-left"><strong>Mua ngay</strong></button>
             </form>
             <!--<p class=" "><a rel="nofollow" href="#" class="button btn-tw-add-cart product_type_simple add_to_cart_button ajax_add_to_cart">Mua ngay</a></p>-->
         </div>

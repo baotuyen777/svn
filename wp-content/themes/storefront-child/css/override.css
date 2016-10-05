@@ -31,3 +31,6 @@ and open the template in the editor.
 .wc_payment_methods {
     display: none;
 }
+#billing_first_name_field{
+    width: 100%;
+}

@@ -39,7 +39,9 @@ p {
   font-weight: normal;
   font-style: normal;
 }
-
+.detail-product .side-bar img {
+  width: auto;
+}
 html body, h1, h2, h3, h4, h5 {
   font-family: 'segeoui';
 }
@@ -819,6 +821,14 @@ footer .line-footer {
 }
 ul {
   padding: 0;
+}
+.dropdown_cart.open {
+  position: relative;
+}
+.dropdown_cart.open .dropdown-menu{
+      position: absolute;
+    width: 250px;
+    right: 0;
 }
 .mini_cart_item .remove{
     display: none;

@@ -6,8 +6,9 @@ include_once 'include/widget.php';
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
 
 function custom_override_checkout_fields($fields) {
-//    var_dump($fields);
-    $fields['billing_first_name']['label']= 'Họ tên';
+    $fields['billing']['billing_first_name']['label'] = 'Họ tên';
+    $fields['billing']['billing_email']['label'] = 'Email';
+    $fields['billing']['billing_address_1']['label'] = 'Địa chỉ';
 //    unset($fields['billing']['billing_first_name']);
     unset($fields['billing']['billing_last_name']);
     unset($fields['billing']['billing_company']);

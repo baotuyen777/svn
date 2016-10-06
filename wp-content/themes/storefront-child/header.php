@@ -57,7 +57,7 @@
                                         $redirect_uri = admin_url('admin-ajax.php?action=qsoft_facebook_callback');
                                         if (!is_user_logged_in()):
                                             ?>
-                                            <a href="https://www.facebook.com/dialog/oauth?client_id=<?php echo $client_id ?>&redirect_uri=<?php echo $redirect_uri ?>">
+                                            <a class="size-15" href="https://www.facebook.com/dialog/oauth?client_id=<?php echo $client_id ?>&redirect_uri=<?php echo $redirect_uri ?>">
                                                 <i class="fa fa-facebook" aria-hidden="true"></i>Đăng nhập bằng facebook 
                                             </a>
                                             <?php
@@ -81,10 +81,10 @@
                                                 </ul> -->
                                             </div>
                                         <?php endif; ?>
-                                        <a href="<?php echo get_permalink(PAGE_ABOUT_US) ?>"><i class="fa fa-users" aria-hidden="true"></i>Về chúng tôi </a>
+                                        <a class="size-15" href="<?php echo get_permalink(PAGE_ABOUT_US) ?>"><i class="fa fa-users" aria-hidden="true"></i>Về chúng tôi </a>
                                         <!--<a href="#"></a>-->
                                         <div class="dropdown dropdown_cart">
-                                            <button class=" dropdown-toggle btn_cart" type="button" data-toggle="dropdown">
+                                            <button class=" dropdown-toggle btn_cart size-15" type="button" data-toggle="dropdown">
                                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>Giỏ hàng
                                                 <span class="caret"></span>
                                             </button>

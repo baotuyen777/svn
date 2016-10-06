@@ -73,11 +73,14 @@ if (!defined('ABSPATH')) {
     <p class="total"><strong><?php _e('Subtotal', 'woocommerce'); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
     <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
-
-    <p class="buttons">
-        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="button wc-forward"><?php _e('View Cart', 'woocommerce'); ?></a>
-        <a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="button checkout wc-forward"><?php _e('Checkout', 'woocommerce'); ?></a>
-    </p>
+    <div class="row buttons-tw">
+        <div class="col-sm-6">
+            <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="button checked wc-forward full-width"><?php echo 'Kiểm tra' ; ?></a>
+        </div>
+        <div class="col-sm-6">
+            <a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="button checkout wc-forward full-width"><?php _e('Thanh toán', 'woocommerce'); ?></a>
+        </div>
+    </div>
 
 <?php endif; ?>
 

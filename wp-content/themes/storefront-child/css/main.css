@@ -346,7 +346,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #ff1b1b;
+  color: #ffd944;
   text-decoration: none;
 }
 
@@ -693,6 +693,7 @@ h3 ~ a {
   display: block;
   font-size: 20px;
   font-weight: bold;
+  margin-left: 0;
 }
 
 .products .product .price del {
@@ -806,7 +807,47 @@ footer .line-footer {
 .text-orange {
   color: #cf5702;
 }
+.dropdown_cart .cart_list:before{
+    content: " ";
+    background-image: url(https://nuts.com/nutshell/img/sprites@1x-70e4cede.png);
+    background-position: 0 -12px;
+    height: 5px;
+    width: auto;
+    display: block;
+}
+.dropdown_cart .dropdown-menu {
+  background: #e0d3c2;
+}
+.dropdown_cart .dropdown-menu .total {
+    margin-top: -43px;
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    border-top: 2px solid #ccc;
+}
+.dropdown_cart .cart_list li {
+  background: #eeece7;
+}
+.dropdown_cart .cart_list li:last-child {
+  padding-bottom: 60px;
+}
+.dropdown_cart .cart_list li{
+      padding-left: 10px;
+    padding-right: 10px;
+  border-bottom: none;
+}
+.dropdown_cart .cart_list li .quantity{
+  float: right;
+}
 
+.dropdown_cart .cart_list:after{
+      content: " ";
+     background-image: url(https://nuts.com/nutshell/img/sprites@1x-70e4cede.png); 
+    background-position: 0 -6px;
+    height: 5px;
+    width: auto;
+    display: block;
+}
 .breadcrumbs {
   border-bottom: 1px solid #ccc;
 }
@@ -825,10 +866,42 @@ ul {
 .dropdown_cart.open {
   position: relative;
 }
+.dropdown_cart .buttons-tw a{
+  padding-top: 5px;
+  text-align: center;
+  height: 30px;
+  display: block;
+  color: #fff;
+}
+.dropdown_cart .buttons-tw a:after {
+  content: none;
+}
+.dropdown_cart .buttons-tw .checked {
+  color: #fff;
+  background: #6ecde4;
+}
+.dropdown_cart .buttons-tw .checked:focus, .dropdown_cart .buttons-tw .checked:hover {
+  color: #fff;
+  background: #28a5c3;
+}
+.dropdown_cart .buttons-tw .checkout {
+  color: #fff;
+  background: #518116;
+}
+.woocommerce-info, .create-account {
+  display: none;
+}
+.dropdown_cart .buttons-tw .checkout:hover, .dropdown_cart .buttons-tw .checkout:focus{
+  color: #fff;
+  background: #7abf24;
+}
 .dropdown_cart.open .dropdown-menu{
-      position: absolute;
-    width: 250px;
-    right: 0;
+    margin-left: -200px;
+     position: absolute;
+     padding: 20px;
+    width: 300px;
+    right: 143px;
+    top: 20px;
 }
 .mini_cart_item .remove{
     display: none;
@@ -854,7 +927,6 @@ hr.bold {
 }
 .list-products .products .product .price del {
       margin-top: 5px;
-    margin-left: 10px;
 }
 @media (max-width: 1199px) {
   h1 {

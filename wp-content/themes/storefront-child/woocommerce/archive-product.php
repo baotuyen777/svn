@@ -34,8 +34,8 @@ do_action('woocommerce_before_main_content');
 <div class="main">
     <div class="list-products">
         <div class="container">
-            <?php do_action('storefront_content_top'); ?>
             <div class="content-page">
+                <?php do_action('storefront_content_top'); ?>
                 <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
                     <h2 class="title seze-20 text-orange font-blow text-uppercase"><?php woocommerce_page_title(); ?> </h2>
                 <?php endif; ?>

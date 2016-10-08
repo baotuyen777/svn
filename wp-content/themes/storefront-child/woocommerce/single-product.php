@@ -39,11 +39,7 @@ do_action('woocommerce_before_main_content');
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-8">
-                <div class="breadcrumbs">
-                    <div class="breadcrumbs size-18 ">
-                        <a href>Home</a> - <span class="current">Hoa qua sấy</span>
-                    </div>
-                </div>
+                <?php do_action('storefront_content_top'); ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <?php
                              $_product = $_pf->get_product(get_the_id());

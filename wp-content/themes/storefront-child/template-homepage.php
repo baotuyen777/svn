@@ -18,7 +18,8 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-sm-7 col-md-8">
-                    <h3 class="inline-block">SẢN PHẨM MỚI </h3><a href="#">xem thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    <h3 class="inline-block">SẢN PHẨM MỚI </h3>
+                    <a href="<?php echo get_permalink(PAGE_NEW_PRODCT)?>">xem thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                     <div class="block-items products">
                         <div class="row">
                             <?php
@@ -47,7 +48,8 @@ get_header();
                         </div>
                     </div>
                     <br><br>
-                    <h3 class="inline-block"> BÁN CHẠY</h3><a href="#">xem thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    <h3 class="inline-block"> BÁN CHẠY</h3>
+                    <a href="<?php echo get_permalink(PAGE_BEST_SELLER)?>">xem thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                     <div class="block-items products">
 
                         <div class="row">

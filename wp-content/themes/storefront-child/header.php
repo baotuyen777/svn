@@ -246,5 +246,5 @@
                      *
                      * @hooked woocommerce_breadcrumb - 10
                      */
-                    do_action('storefront_content_top');
+                   
                     

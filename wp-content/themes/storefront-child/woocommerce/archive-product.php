@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @author      WooThemes
+ * @package     WooCommerce/Templates
  * @version     2.0.0
  */
 if (!defined('ABSPATH')) {
@@ -34,11 +34,7 @@ do_action('woocommerce_before_main_content');
 <div class="main">
     <div class="list-products">
         <div class="container">
-            <span class="breadcrumbs">
-                <div class="breadcrumbs  size-20 " xmlns:v="http://rdf.data-vocabulary.org/#">
-                    <a href="<?php echo get_home_url(); ?>"">Home</a> / <span class="current"><?php the_title(); ?></span>
-                </div><!-- .breadcrumbs -->
-            </span>
+            <?php do_action('storefront_content_top'); ?>
             <div class="content-page">
                 <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
                     <h2 class="title seze-20 text-orange font-blow text-uppercase"><?php woocommerce_page_title(); ?> </h2>

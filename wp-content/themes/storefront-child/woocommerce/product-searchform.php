@@ -27,6 +27,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!--<input type="search" id="woocommerce-product-search-field" class="search-field" placeholder="<?php echo esc_attr_x( 'Search Products&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />-->
 <input placeholder="Tìm kiếm sản phẩm..." class="size-12" type="text" value="" required="true" name="s" id="s">	
 <!--<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" />-->
-        <input type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>">
+        <input type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Tìm kiếm', 'submit button', 'woocommerce' ); ?>">
 	<input type="hidden" name="post_type" value="product" />
 </form>

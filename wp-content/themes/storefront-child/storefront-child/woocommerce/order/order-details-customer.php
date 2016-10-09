@@ -20,8 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<header><h2><?php _e( 'Customer Details', 'woocommerce' ); ?></h2></header>
-
+<header><h3 class="margin-top-45 text-orange"><?php _e( 'Customer Details', 'woocommerce' ); ?></h3></header>
+<br>
 <table class="shop_table customer_details">
 	<?php if ( $order->customer_note ) : ?>
 		<tr>
@@ -43,7 +43,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<td><?php echo esc_html( $order->billing_phone ); ?></td>
 		</tr>
 	<?php endif; ?>
-
 	<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
 </table>
 
@@ -55,8 +54,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 
 <header class="title">
-	<h3><?php _e( 'Billing Address', 'woocommerce' ); ?></h3>
+	<p><strong><?php _e( 'Billing Address', 'woocommerce' ); ?>:</strong></p>
 </header>
+
 <address>
 	<?php echo ( $address = $order->get_formatted_billing_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
 </address>
@@ -68,6 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<header class="title">
 			<h3><?php _e( 'Shipping Address', 'woocommerce' ); ?></h3>
 		</header>
+
 		<address>
 			<?php echo ( $address = $order->get_formatted_shipping_address() ) ? $address : __( 'N/A', 'woocommerce' ); ?>
 		</address>

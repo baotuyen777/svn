@@ -325,7 +325,107 @@ h4 {
   background: #000;
   opacity: 0.6;
 }
-
+.hotline {
+    background: #cf5702;
+    width: 70%;
+    padding: 12px 0 5px 0;
+    border-radius: 6px;
+}
+.size-28 {
+  font-size: 28px;
+}
+a.remove:before {
+  content: 'Hủy bỏ';
+  color: #fff;
+}
+.woocommerce-thankyou-order-received {
+      display: inline-block;
+    background: #cf5702;
+    color: #fff;
+    margin-top: 30px;
+    padding: 8px 30px;
+    font-size: 18px;
+}
+.shop_table.customer_details {
+  width: 80%;
+}
+.shop_table.customer_details td {
+  color: #cf5702;
+  font-size: 16px;
+}
+.shop_table.order_details {
+  width: 50%;
+}
+.shop_table.order_details .woocommerce-Price-amount {
+  color: #cf5702;
+  font-size: 16px;
+}
+.shop_table.order_details tfoot tr:first-child{
+    display: none;
+} 
+.woocommerce-message {
+  display: none;
+}
+.woocommerce-thankyou-order-details~p {
+  display: none;
+}
+.text-left {
+  text-align: left !important;
+}
+.cart-collaterals .cart_totals, .cart-collaterals .shipping_calculator {
+  width: 100%;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  text-align: right;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+#reviews {
+  display: none;
+}
+.wc-proceed-to-checkout, .wc-proceed-to-checkout .button {
+  margin-left: 40px;
+}
+.wc-proceed-to-checkout .button.checkout-button  {
+    padding: 4px 10px;
+    background: #518116;
+    color: #fff;
+    border-radius: 4px;
+    }.wc-proceed-to-checkout .button.checkout-button:hover {
+      background: #cf5702;
+    }
+.wc-forward:after, .woocommerce-Button--next:after {
+  content: "\f101";
+}
+.woocommerce-cart .woocommerce .actions input {
+  margin-left: 45px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: #fff;
+    background: #518116;
+  }
+  .wc-proceed-to-checkout, .wc-proceed-to-checkout .button {margin-bottom: 0;}
+  .woocommerce-cart .woocommerce .actions input:hover {
+    background: #cf5702;
+  }
+  table.cart td.product-quantity .qty {
+    padding: 2px;
+  }
+  table.cart {
+    margin-bottom: 10px;
+  }
+table.cart td.product-remove a.remove {
+    display: block;
+    overflow: hidden;
+    padding: 15px 35px 10px 35px;
+    font-size: 14px;
+    background: #518116;
+    color: #fff;
+    border-radius: 4px;
+}
+table.cart td.product-remove a.remove:hover {
+  background: #cf5702;
+}
 #back-to-top {
   position: fixed;
   bottom: 18px;
@@ -344,7 +444,17 @@ h4 {
   transition: opacity 0.2s ease-out;
   opacity: 0;
 }
-
+h2.margin-bottom-0 {
+  margin-bottom: 0;
+  border-bottom: 2px solid #ccc;
+}
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+.entry-title {display: none;}
+.woocommerce-cart .woocommerce .woocommerce-message {
+  display: none;
+}
 #back-to-top i {
   color: #f57e30;
 }
@@ -999,13 +1109,62 @@ hr.bold {
     top: 5px;
     right: 65px;
   }
+  table.cart td, table.cart th {
+    padding: 0 0;
+  }
+  .cart-collaterals .cart_totals .size-24  {
+    font-size: 18px;
+  }
+  .woocommerce-cart .woocommerce .actions input {margin-left: 0;}
+  .wc-proceed-to-checkout, .wc-proceed-to-checkout .button {
+    margin-left: 25px;
+  }
 }
-
+.woocommerce-cart .cart_item {
+  border-bottom: 1px solid #ccc !important;
+}
 input {
   outline: none;
 }
 
 @media (max-width: 767px) {
+  .woocommerce-cart .cart_item {
+    padding: 20px 0;
+  }
+  .header-top .menu-top {
+    margin-top: -10px;
+  }
+  .cart-page {
+    margin-top: 60px !important;
+  }
+  .hotline {
+    margin: -20px auto 0;
+  }
+  .product-remove a{
+    background: #518116;
+    margin: 0;
+    width: 100%;
+    border-radius: 4px;
+  }
+  .product-remove a:hover {
+    background: #cf5702;
+  }
+  .quantity  input {
+    padding: 0;
+  }
+  .cart-collaterals .cart_totals .size-24 {
+    font-size: 16px;
+  }
+  .wc-proceed-to-checkout, .wc-proceed-to-checkout .button {
+    margin-left: 15px;
+  }
+  .wc-proceed-to-checkout .button.checkout-button {
+    padding: 4px 10px;
+    background: #518116;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+  }
   .header-top .menu-top {
     text-align: center;
   }

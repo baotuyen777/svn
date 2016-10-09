@@ -21,9 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( $order ) : ?>
-
+<div class="col-sm-10 col-sm-offset-1">
 	<?php if ( $order->has_status( 'failed' ) ) : ?>
-
 		<p class="woocommerce-thankyou-order-failed"><?php _e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ); ?></p>
 
 		<p class="woocommerce-thankyou-order-failed-actions">
@@ -34,10 +33,11 @@ if ( $order ) : ?>
 		</p>
 
 	<?php else : ?>
-
-		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
-
-		<ul class="woocommerce-thankyou-order-details order_details">
+		<div class="text-center">
+			<p class="woocommerce-thankyou-order-received text-center"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( '<i class="fa fa-check" aria-hidden="true"></i> Đặt mua thành công.', 'woocommerce' ), $order ); ?></p>
+			<p class="size-16">Cảm ơn quý khách đã đặt hàng, chúng tôi sẽ liên hệ lại để xác nhận thông tinh giao hàng</p>
+		</div>
+		<ul class="woocommerce-thankyou-order-details order_details" hidden="true">
 			<li class="order">
 				<?php _e( 'Order Number:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_order_number(); ?></strong>
@@ -63,7 +63,7 @@ if ( $order ) : ?>
 
 	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
 	<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
-
+</div>
 <?php else : ?>
 
 	<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), null ); ?></p>

@@ -346,6 +346,41 @@ a.remove:before {
     padding: 8px 30px;
     font-size: 18px;
 }
+.order-total th, .order-total td {
+  font-weight: normal;
+  font-size: 20px;
+}
+.order-total {
+  display: block;
+  margin-top: 20px;
+}
+.adds {
+  margin-left: 15%;
+}
+#payment .place-order .button {
+    height: 40px;
+    border-radius: 4px;
+    background: #cf5702;
+    color: #fff;
+    }
+#payment .place-order .button:hover {
+    background: #518116;
+}
+#order_review_heading {
+  width: auto;
+  float: none;
+  text-align: center;
+}
+.woocommerce-checkout-review-order-table tbody{
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 30px;
+}
+.text-green {
+  color: #518116;
+}
+#order_comments_field label{
+    display: none;
+}
 .shop_table.customer_details {
   width: 80%;
 }
@@ -1295,9 +1330,27 @@ input {
   .main {
     padding-bottom: 0;
   }
+  .shop_table.order_details {
+      width: 100%;
+  }
+  .woocommerce-checkout .col-sm-4.pull-right {
+    float: none !important;
+  }
+  #order_review_heading {
+    text-align: left;
+  }
+  #payment .place-order .button {
+    width: 240px;
+  }
+  #order_review_heading {
+    margin-top: -20px;
+  }
 }
 
 @media (max-width: 479px) {
+  .adds {
+    margin-left: 8%;
+  }
   .product .header-item .pull-left, .product .header-item .pull-right {
     float: none !important;
   }

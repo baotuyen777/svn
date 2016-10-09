@@ -27,15 +27,12 @@ if (!defined('ABSPATH')) {
         <h3><?php _e('Billing &amp; Shipping', 'woocommerce'); ?></h3>
 
 <?php else : ?>
-
-        <h3 class="q_billing_title"><?php _e('Thông tin đơn hàng', 'woocommerce'); ?></h3>
-
+    <h2 class="title seze-20 text-orange font-blow text-uppercase margin-bottom-0">Thông tin khách hàng</h2>
 <?php endif; ?>
 
-    <?php do_action('woocommerce_before_checkout_billing_form', $checkout); ?>
-
+    <?php do_action('woocommerce_before_checkout_billing_form', $checkout); ?><br>
+    <p class="margin-top-30 size-18"><strong> Địa chỉ giao hàng của quý khách</strong></p>
     <?php foreach ($checkout->checkout_fields['billing'] as $key => $field) : ?>
-
         <?php woocommerce_form_field($key, $field, $checkout->get_value($key)); ?>
 
     <?php endforeach; ?>

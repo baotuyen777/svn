@@ -60,7 +60,6 @@ get_header();
                                 'category' => '', // Slugs
                                 'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
                                     ), 'best_selling_products');
-
                             $query_args = array(
                                 'post_type' => 'product',
                                 'post_status' => 'publish',

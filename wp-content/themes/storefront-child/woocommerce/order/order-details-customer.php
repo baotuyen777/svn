@@ -51,29 +51,19 @@ if (!defined('ABSPATH')) {
         <div class="col-1">
 
         <?php endif; ?>
-
-        <header class="title">
-            <p><strong><?php _e('Địa chỉ', 'woocommerce'); ?>:</strong></p>
-        </header>
-
-        <address>
-            <?php
+        <?php
             global $woocommerce;
             $customer = $woocommerce->customer;
-            echo $customer->shipping_address_1;
-            ?>
-        </address>
-        <header class="title">
-            <p><strong><?php _e('Họ tên', 'woocommerce'); ?>:</strong></p>
-        </header>
-
-        <address>
-            <?php
             $user = wp_get_current_user();
-            echo ($user->data->display_name);
             ?>
-        </address>
-
+        <div>
+            <span><strong><?php _e('Địa chỉ', 'woocommerce'); ?>:</strong></span>
+            <strong class="size-16 adds text-orange"><?php  echo $customer->shipping_address_1; ?></strong>
+        </div>
+        <div class="title">
+            <span><strong><?php _e('Họ tên', 'woocommerce'); ?>:</strong></span>
+            <strong class="text-orange size-16 adds"><?php echo ($user->data->display_name); ?></strong>
+        </div>
         <?php if (!wc_ship_to_billing_address_only() && $order->needs_shipping_address()) : ?>
 
         </div><!-- /.col-1 -->

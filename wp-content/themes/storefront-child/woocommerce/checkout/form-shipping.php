@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
 
-			<h3><?php _e( 'Thông tin thêm', 'woocommerce' ); ?></h3>
+			<p><strong><?php _e( 'Thông tin thêm', 'woocommerce' ); ?></strong></p>
 
 		<?php endif; ?>
 

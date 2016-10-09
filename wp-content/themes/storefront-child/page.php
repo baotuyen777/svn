@@ -16,8 +16,8 @@ get_header();
         <div class="container">
             <div class="row">
             <?php 
-                if ( is_checkout() && ! empty( $wp->query_vars['order-received'] ) ) {
-                    echo '<div class="col-sm-10 col-sm-offset-1">';
+                if ( is_checkout() && ! empty( $wp->query_vars['order-received'] ) || is_checkout()) {
+                    echo '<div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">';
                 }else {
                     echo ' <div class="col-sm-7 col-md-8">';
                 }
@@ -69,7 +69,7 @@ get_header();
                     ?>
                 </div>
                 <?php 
-                if ( is_checkout() && ! empty( $wp->query_vars['order-received'] ) ) {
+                if ( is_checkout() && ! empty( $wp->query_vars['order-received'] ) || is_checkout()) {
                    
                 }else { ?>
                         <div class="col-sm-5 col-md-4">

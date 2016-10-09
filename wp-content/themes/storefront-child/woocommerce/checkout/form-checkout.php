@@ -33,35 +33,32 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+	<div class="row">
+		<div class="col-sm-8">
+			<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
+			<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
-
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
+			<div  id="customer_details">
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
-			</div>
-
-			<div class="col-2">
 				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 			</div>
+
+			<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+
+		<?php endif; ?>
 		</div>
+		<div class="col-sm-4 pull-right">
+		<br><br><br>
+			<h4 id="order_review_heading"><strong><?php echo 'GIỎ HÀNG CỦA BẠN'; ?></strong></h4>
+			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+			<div id="order_review1" class="woocommerce-checkout-review-order1">
+				<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+			</div>
 
-	<?php endif; ?>
-
-	<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
-
-	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-	<div id="order_review1" class="woocommerce-checkout-review-order1">
-		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+			<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+		</div>
 	</div>
-
-	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>

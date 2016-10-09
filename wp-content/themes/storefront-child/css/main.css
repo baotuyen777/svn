@@ -24,6 +24,12 @@ Version: 1.0.0
 p {
   color: #3a3a3a;
 }
+.archive .woocommerce .woocommerce-message, .single-product .woocommerce .woocommerce-message {
+  display: none !important;
+}
+.cart_totals  h2,.cart_totals .cart-subtotal {
+  display: none;
+}
 .single-product div.product {
     position: inherit;
     overflow: hidden;
